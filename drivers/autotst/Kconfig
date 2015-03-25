@@ -1,0 +1,5 @@
+config AUTOTST
+	bool "Sprd autotest"
+	default n
+	help
+	  AUTOTST is a module for spreadtrum autotest

@@ -1,0 +1,41 @@
+menuconfig ION
+	tristate "Ion Memory Manager"
+	select GENERIC_ALLOCATOR
+	help
+	  Chose this option to enable the ION Memory Manager.
+
+config ION_PAGECACHE
+	bool "Share spare carveout pages as page cache"
+	depends on ION
+	help
+	  Select this to enable spare carveout pages as page cache,
+	  when reading in file for a page fault or reading ahead pages for
+	  the share executable object.
+
+config ION_BUDDY_CARVEOUT
+	bool "use buddy memory management in ion carveout heap "
+	depends on ION
+	select BUDDY_ALLOCATOR
+	help
+	  Select this to enable buddy carveout heap
+
+config ION_BUDDY_CHECKPAGE
+	bool "Add one more page to check the modified memory"
+	depends on BUDDY_ALLOCATOR
+	depends on ION_PAGECACHE
+	help
+	  Choose this option if you wish to slove the memory modified problem.
+
+
+config ION_TEGRA
+	tristate "Ion for Tegra"
+	depends on ARCH_TEGRA && ION
+	help
+	  Choose this option if you wish to use ion on an nVidia Tegra.
+
+config ION_SPRD
+	tristate "Ion for SPRD"
+	depends on ION
+	help
+	  Choose this option if you wish to use ion on an SPRD chip.
+
