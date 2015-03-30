@@ -1,4 +1,4 @@
-KERNEL_SOURCE =$(ANDROID_BUILD_TOP)/kernel
+KERNEL_SOURCE ?=$(ANDROID_BUILD_TOP)/kernel
 FM_ROOT := $(KERNEL_SOURCE)/drivers/media/radio/trout_fm
 
 include $(FM_ROOT)/config.mk
