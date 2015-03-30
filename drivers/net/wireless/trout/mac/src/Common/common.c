@@ -37,7 +37,7 @@
 #include "common.h"
 #include "mh.h"
 #include "csl_linux.h"
-#include "src/Common/trout_share_mem.h"
+#include "trout_share_mem.h"
 
 #ifdef MAC_HW_UNIT_TEST_MODE
 #include "mh_test.h"
